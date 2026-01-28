@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услуги — концепт</title>
+
+<style>
+:root {
+  --bg: #f2f3f5;
+  --card-bg: #1f2430;
+  --overlay: rgba(0,0,0,.45);
+  --accent: #6ec1ff;
+  --text: #ffffff;
+  --muted: #c9d1db;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  padding: 40px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ===== CARD ===== */
+.service-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-bg);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .6s ease;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  transition: background .4s ease;
+}
+
+.service-card:hover::before {
+  transform: scale(1.05);
+}
+
+.service-card:hover::after {
+  background: rgba(0,0,0,.6);
+}
+
+/* ===== CONTENT ===== */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ===== BUTTON ===== */
+.card-action {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all .35s ease;
+}
+
+.service-card:hover .card-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 14px;
+}
+
+/* ===== BIG BLOCK ===== */
+.big-service {
+  margin-top: 40px;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 220px;
+  text-decoration: none;
+  display: block;
+}
+
+.big-service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.big-service::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.3));
+}
+
+.big-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.big-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.big-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ===== IMAGES ===== */
+.bg-1::before { background-image: url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"); }
+.bg-2::before { background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70"); }
+.bg-3::before { background-image: url("https://images.unsplash.com/photo-1558981285-6f0c94958bb6"); }
+.bg-4::before { background-image: url("https://images.unsplash.com/photo-1542362567-b07e54358753"); }
+.bg-5::before { background-image: url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7"); }
+.bg-6::before { background-image: url("https://images.unsplash.com/photo-1617886322121-ec4d2fdd3f94"); }
+
+.big-bg::before {
+  background-image: url("https://images.unsplash.com/photo-1518655048521-f130df041f66");
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  body { padding: 20px; }
+  .big-title { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="services-grid">
+
+    <a href="#service-1" class="service-card bg-1">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Ремонт и техническое обслуживание</div>
+          <div class="card-desc">
+            Полный цикл обслуживания, ремонт любой сложности, заранее согласованные объёмы и стоимость.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#service-2" class="service-card bg-2">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Дооснащение и модернизация</div>
+          <div class="card-desc">
+            Навигация, электрика, климат, безопасность и инженерные системы под реальные условия.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#service-3" class="service-card bg-3">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Диагностика технического состояния</div>
+          <div class="card-desc">
+            Комплексная проверка систем с чёткими выводами и приоритетами работ.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#service-4" class="service-card bg-4">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Помощь в покупке и подборе</div>
+          <div class="card-desc">
+            Осмотр судна перед покупкой, оценка рисков и сопровождение сделки.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#service-5" class="service-card bg-5">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Консервация и сезонное обслуживание</div>
+          <div class="card-desc">
+            Подготовка техники к хранению и предсказуемый ввод в сезон.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#service-6" class="service-card bg-6">
+      <div class="card-content">
+        <div>
+          <div class="card-title">Ремонт гидроциклов</div>
+          <div class="card-desc">
+            Диагностика, регламент и подготовка к сезону по стандартам крупной техники.
+          </div>
+        </div>
+        <div class="card-action">
+          <span class="card-btn">Подробнее</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BIG SERVICE -->
+  <a href="#equipment" class="big-service big-bg">
+    <div class="big-content">
+      <div class="big-title">Оборудование, запчасти и комплектующие</div>
+      <div class="big-desc">
+        Подбор и поставка оборудования под конкретную конфигурацию судна и условия эксплуатации.
+        Только проверенные и оправданные решения.
+      </div>
+    </div>
+  </a>
+
+</div>
+</body>
+</html>

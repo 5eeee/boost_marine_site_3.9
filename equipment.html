@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оборудование и запчасти | Boost Marine</title>
+  
+  <!-- Фонт Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Иконки FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="equipment.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+  
+  <!-- ==================== ШАПКА САЙТА ==================== -->
+  <header class="header glass-header">
+    <div class="container">
+      <div class="header__inner">
+        <!-- Логотип -->
+        <a href="index.html" class="logo">
+          <img src="./assets/logo2.png" alt="Boost Marine" class="logo__img">
+          <div class="logo__text">
+            <span class="logo__top">BOOST</span>
+            <span class="logo__bottom">MARINE</span>
+          </div>
+        </a>
+        
+        <!-- Навигация в шапке - 3 пункта -->
+        <nav class="header-nav">
+          <a href="index.html#works" class="nav__link">Работы</a>
+          <a href="index.html#team" class="nav__link">Команда</a>
+          <a href="index.html#contacts" class="nav__link">Контакты</a>
+        </nav>
+        
+        <!-- ИСПРАВЛЕННЫЙ БЛОК КОНТАКТОВ -->
+        <div class="header-contacts">
+          <!-- Верхняя строка: номер и иконки В ОДНОЙ СТРОКЕ -->
+          <div class="header-contacts__top">
+            <a href="tel:+79777140509" class="header-phone">+7 (977) 714-05-09</a>
+            <div class="header-social-row">
+              <!-- WhatsApp -->
+              <a href="https://wa.me/79777140509" class="header-social__link whatsapp" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              
+              <!-- Telegram с выпадающим меню -->
+              <div class="telegram-dropdown">
+                <a href="#" class="header-social__link telegram" aria-label="Telegram">
+                  <i class="fab fa-telegram"></i>
+                </a>
+                <div class="telegram-dropdown__menu">
+                  <a href="https://t.me/boostmarinegroup" target="_blank" class="telegram-dropdown__link">
+                    <i class="fab fa-telegram"></i>
+                    Telegram-канал
+                  </a>
+                  <a href="https://t.me/BoostMarine" target="_blank" class="telegram-dropdown__link">
+                    <i class="fab fa-telegram"></i>
+                    Менеджер в Telegram
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Надпись под номером и иконками -->
+          <span class="header-onsite">Выезд без ограничений</span>
+        </div>
+        
+        <!-- Кнопка связи для мобильных -->
+        <div class="mobile-contact-btn" id="mobile-contact">
+          <button class="contact-toggle" aria-label="Показать контакты">
+            <i class="fas fa-phone"></i>
+          </button>
+          <div class="mobile-contact-dropdown">
+            <a href="tel:+79777140509" class="mobile-contact-link">
+              <i class="fas fa-phone"></i>
+              +7 (977) 714-05-09
+            </a>
+            <a href="https://t.me/boostmarinegroup" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-telegram"></i>
+              Telegram-канал
+            </a>
+            <a href="https://t.me/BoostMarine" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-telegram"></i>
+              Менеджер в Telegram
+            </a>
+            <a href="https://wa.me/79777140509" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-whatsapp"></i>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        
+        <!-- Кнопка меню для мобильных -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html#works" class="mobile-nav__link">Работы</a>
+    <a href="index.html#team" class="mobile-nav__link">Команда</a>
+    <a href="index.html#contacts" class="mobile-nav__link">Контакты</a>
+    <a href="services.html" class="mobile-nav__link">Услуги</a>
+    <a href="equipment.html" class="mobile-nav__link active">Оборудование</a>
+  </nav>
+
+  <!-- Оверлей для мобильного меню -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <!-- ==================== БАННЕР ОБОРУДОВАНИЯ ==================== -->
+  <section class="equipment-banner" style="background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), url('assets/services/Оборудование\,_запчасти_и_комплектующие.png');">
+    <div class="container">
+      <div class="equipment-banner__content">
+        <h1 class="equipment-banner__title">Оборудование и запчасти</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ПОИСК ТОВАРОВ ==================== -->
+  <section class="equipment-search">
+    <div class="container">
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" class="search-input" placeholder="Поиск по товарам...">
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== КАТАЛОГ ТОВАРОВ ==================== -->
+  <section class="equipment-catalog">
+    <div class="container">
+      <div class="products-container">
+        <div class="products-grid" id="productsGrid">
+          <!-- Товар 1 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/motor-oil.jpg" alt="Моторное масло для яхт">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Моторное масло для яхт</h3>
+              <div class="product-card__price">2 500 ₽</div>
+              <div class="product-card__category">Расходники</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="1">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 2 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/filter-set.jpg" alt="Комплект фильтров">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Комплект фильтров</h3>
+              <div class="product-card__price">8 900 ₽</div>
+              <div class="product-card__category">Расходники</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="2">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 3 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/gps-system.jpg" alt="Навигационная система">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Навигационная система</h3>
+              <div class="product-card__price">45 000 ₽</div>
+              <div class="product-card__category">Навигация</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="3">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 4 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/bilge-pump.jpg" alt="Помпа для откачки воды">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Помпа для откачки воды</h3>
+              <div class="product-card__price">12 500 ₽</div>
+              <div class="product-card__category">Оборудование</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="4">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 5 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/piston-set.jpg" alt="Поршневые группы">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Поршневые группы</h3>
+              <div class="product-card__price">22 000 ₽</div>
+              <div class="product-card__category">Двигатель</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="5">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 6 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/turbo.jpg" alt="Турбокомпрессор">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Турбокомпрессор</h3>
+              <div class="product-card__price">68 000 ₽</div>
+              <div class="product-card__category">Двигатель</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="6">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 7 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/gearbox-kit.jpg" alt="Редукторный комплект">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Редукторный комплект</h3>
+              <div class="product-card__price">15 800 ₽</div>
+              <div class="product-card__category">Трансмиссия</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="7">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 8 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/marine-cable.jpg" alt="Морской кабель">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Морской кабель</h3>
+              <div class="product-card__price">850 ₽/м</div>
+              <div class="product-card__category">Электрооборудование</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="8">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 9 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/ac-unit.jpg" alt="Кондиционер каютный">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Кондиционер каютный</h3>
+              <div class="product-card__price">89 000 ₽</div>
+              <div class="product-card__category">Климат</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="9">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 10 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/fishfinder.jpg" alt="Эхолот">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Эхолот</h3>
+              <div class="product-card__price">32 000 ₽</div>
+              <div class="product-card__category">Навигация</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="10">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 11 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/lifejacket.jpg" alt="Спасательный жилет">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Спасательный жилет</h3>
+              <div class="product-card__price">6 500 ₽</div>
+              <div class="product-card__category">Безопасность</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="11">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 12 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/yacht-sofa.jpg" alt="Яхтенный диван">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Яхтенный диван</h3>
+              <div class="product-card__price">45 000 ₽</div>
+              <div class="product-card__category">Интерьер</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="12">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 13 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/fuel-pump.jpg" alt="Топливный насос">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Топливный насос</h3>
+              <div class="product-card__price">9 800 ₽</div>
+              <div class="product-card__category">Двигатель</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="13">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 14 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/marine-battery.jpg" alt="Судовой аккумулятор">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Судовой аккумулятор</h3>
+              <div class="product-card__price">18 500 ₽</div>
+              <div class="product-card__category">Электрооборудование</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="14">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+          
+          <!-- Товар 15 -->
+          <div class="product-card catalog-card">
+            <div class="product-card__image">
+              <img src="assets/products/marine-radio.jpg" alt="Радиостанция морская">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">Радиостанция морская</h3>
+              <div class="product-card__price">28 000 ₽</div>
+              <div class="product-card__category">Связь</div>
+              <button class="btn btn--primary product-details-btn" data-product-id="15">
+                <i class="fas fa-info-circle"></i>
+                Подробнее
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ФУТЕР ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <a href="index.html" class="logo">
+            <img src="assets/logo2.png" alt="Boost Marine" class="logo__img">
+            <div class="logo__text">
+              <span class="logo__top">BOOST</span>
+              <span class="logo__bottom">MARINE</span>
+            </div>
+          </a>
+          <p class="footer__tagline">Профессиональный ремонт водной техники</p>
+        </div>
+        
+        <div class="footer__nav">
+          <h4 class="footer__title">Навигация</h4>
+          <a href="index.html#works" class="footer__link">Работы</a>
+          <a href="index.html#team" class="footer__link">Команда</a>
+          <a href="services.html" class="footer__link">Услуги</a>
+          <a href="equipment.html" class="footer__link">Оборудование</a>
+        </div>
+        
+        <div class="footer__services">
+          <h4 class="footer__title">Контакты</h4>
+          <a href="tel:+79777140509" class="footer__link">+7 (977) 714-05-09</a>
+          
+          <div class="footer__social">
+            <a href="https://t.me/boostmarinegroup" class="social-icon" target="_blank">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://t.me/BoostMarine" class="social-icon" target="_blank">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/79777140509" class="social-icon" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2025 Boost Marine. Все права защищены.</p>
+        <p class="footer__note">Выезд без ограничений по региону</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== МОДАЛЬНОЕ ОКНО ДЕТАЛЕЙ ТОВАРА ==================== -->
+  <div class="modal-overlay" id="productModalOverlay">
+    <div class="modal modal--product" id="productModal">
+      <button class="modal__close" id="productModalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal__content">
+        <div class="product-modal__container">
+          <div class="product-modal__gallery">
+            <div class="product-modal__main-image">
+              <img id="modalMainImage" src="" alt="">
+            </div>
+            <div class="product-modal__thumbnails" id="modalThumbnails">
+              <!-- Миниатюры будут добавляться через JS -->
+            </div>
+          </div>
+          
+          <div class="product-modal__info">
+            <h3 class="product-modal__title" id="modalProductTitle"></h3>
+            <div class="product-modal__price" id="modalProductPrice"></div>
+            <div class="product-modal__category" id="modalProductCategory"></div>
+            
+            <div class="product-modal__description">
+              <h4>Описание</h4>
+              <p id="modalProductDescription"></p>
+            </div>
+            
+            <div class="product-modal__specs">
+              <h4>Характеристики</h4>
+              <table id="modalProductSpecs">
+                <!-- Характеристики будут добавляться через JS -->
+              </table>
+            </div>
+            
+            <div class="product-modal__actions">
+              <div class="product-modal__contacts">
+                <p class="contacts-title">Купить через:</p>
+                <a href="tel:+79777140509" class="product-modal__phone">
+                  <i class="fas fa-phone"></i>
+                  +7 (977) 714-05-09
+                </a>
+                <div class="product-modal__messengers">
+                  <a href="https://t.me/BoostMarine" class="messenger-btn telegram-btn" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    Telegram
+                  </a>
+                  <a href="https://wa.me/79777140509" class="messenger-btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="script.js"></script>
+  <script src="equipment.js"></script>
+</body>
+</html>

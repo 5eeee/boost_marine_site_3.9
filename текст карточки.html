@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Service Cards Concept</title>
+<style>
+:root {
+  --bg: #f4f5f7;
+  --card-dark: #1e222d;
+  --accent: #6ec1ff;
+  --text-light: #ffffff;
+  --text-muted: #b7c0cc;
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  padding: 40px;
+}
+
+.section {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* ===== CARD ===== */
+.card {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card-dark);
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+
+/* background image */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(.65);
+  transition: transform .6s ease;
+}
+
+.card:hover::before {
+  transform: scale(1.05);
+}
+
+/* gradient overlay */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
+
+/* content */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-number {
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-light);
+  line-height: 1.25;
+  margin-top: 10px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-link {
+  font-size: 14px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .25s ease, color .25s ease;
+}
+
+.card:hover .card-link {
+  background: var(--accent);
+  color: #000;
+}
+
+.arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* ===== images ===== */
+.bg-1::before { background-image: url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"); }
+.bg-2::before { background-image: url("https://images.unsplash.com/photo-1542362567-b07e54358753"); }
+.bg-3::before { background-image: url("https://images.unsplash.com/photo-1558981285-6f0c94958bb6"); }
+.bg-4::before { background-image: url("https://images.unsplash.com/photo-1518655048521-f130df041f66"); }
+.bg-5::before { background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70"); }
+.bg-6::before { background-image: url("https://images.unsplash.com/photo-1617886322121-ec4d2fdd3f94"); }
+.bg-7::before { background-image: url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7"); }
+.bg-8::before { background-image: url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"); }
+.bg-9::before { background-image: url("https://images.unsplash.com/photo-1542362567-b07e54358753"); }
+.bg-10::before { background-image: url("https://images.unsplash.com/photo-1558981285-6f0c94958bb6"); }
+
+/* ===== mobile ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .card {
+    height: 300px;
+  }
+  .card-title {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="section">
+  <div class="cards">
+
+    <div class="card bg-1">
+      <div class="card-content">
+        <div>
+          <div class="card-number">01</div>
+          <div class="card-title">Мотоциклы в наличии<br>и в пути</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">В каталог</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-2">
+      <div class="card-content">
+        <div>
+          <div class="card-number">02</div>
+          <div class="card-title">Заказать мотоцикл<br>из Японии</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">Подробнее</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-3">
+      <div class="card-content">
+        <div>
+          <div class="card-number">03</div>
+          <div class="card-title">Подбор мотоцикла<br>в Москве</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">Перейти</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-4">
+      <div class="card-content">
+        <div>
+          <div class="card-number">04</div>
+          <div class="card-title">Новые мотоциклы<br>из Европы</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">В каталог</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-5">
+      <div class="card-content">
+        <div>
+          <div class="card-number">05</div>
+          <div class="card-title">Продать мотоцикл<br>через салон</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">Оставить заявку</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-6">
+      <div class="card-content">
+        <div>
+          <div class="card-number">06</div>
+          <div class="card-title">Мотосервис<br>и обслуживание</div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link">Записаться</a>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

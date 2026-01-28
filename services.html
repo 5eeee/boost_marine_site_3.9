@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги | Boost Marine - ремонт яхт, катеров и гидроциклов</title>
+  
+  <!-- Фонт Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Иконки FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="services.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+  
+  <!-- ШАПКА САЙТА -->
+  <header class="header glass-header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo">
+          <img src="./assets/logo2.png" alt="Boost Marine" class="logo__img">
+          <div class="logo__text">
+            <span class="logo__top">BOOST</span>
+            <span class="logo__bottom">MARINE</span>
+          </div>
+        </a>
+        
+        <nav class="header-nav">
+          <a href="index.html#works" class="nav__link">Работы</a>
+          <a href="index.html#team" class="nav__link">Команда</a>
+          <a href="index.html#contacts" class="nav__link">Контакты</a>
+        </nav>
+        
+        <div class="header-contacts">
+          <div class="header-contacts__top">
+            <a href="tel:+123456789" class="header-phone">+1 234 567 89</a>
+            <div class="header-social-row">
+              <a href="https://wa.me/123456789" class="header-social__link whatsapp" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              
+              <div class="telegram-dropdown">
+                <a href="#" class="header-social__link telegram" aria-label="Telegram">
+                  <i class="fab fa-telegram"></i>
+                </a>
+                <div class="telegram-dropdown__menu">
+                  <a href="https://t.me/boostmarinegroup" target="_blank" class="telegram-dropdown__link">
+                    <i class="fab fa-telegram"></i>
+                    Telegram-канал
+                  </a>
+                  <a href="https://t.me/BoostMarine" target="_blank" class="telegram-dropdown__link">
+                    <i class="fab fa-telegram"></i>
+                    Менеджер в Telegram
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <span class="header-onsite">Выезд без ограничений</span>
+        </div>
+        
+        <div class="mobile-contact-btn" id="mobile-contact">
+          <button class="contact-toggle" aria-label="Показать контакты">
+            <i class="fas fa-phone"></i>
+          </button>
+          <div class="mobile-contact-dropdown">
+            <a href="tel:+123456789" class="mobile-contact-link">
+              <i class="fas fa-phone"></i>
+              +1 234 567 89
+            </a>
+            <a href="https://t.me/boostmarinegroup" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-telegram"></i>
+              Telegram-канал
+            </a>
+            <a href="https://t.me/BoostMarine" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-telegram"></i>
+              Менеджер в Telegram
+            </a>
+            <a href="https://wa.me/123456789" target="_blank" class="mobile-contact-link">
+              <i class="fab fa-whatsapp"></i>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Открыть меню">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html#works" class="mobile-nav__link">Работы</a>
+    <a href="index.html#team" class="mobile-nav__link">Команда</a>
+    <a href="index.html#contacts" class="mobile-nav__link">Контакты</a>
+    <a href="services.html" class="mobile-nav__link active">Услуги</a>
+    <a href="equipment.html" class="mobile-nav__link">Оборудование</a>
+  </nav>
+
+  <!-- Оверлей для мобильного меню -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <!-- ГОРИЗОНТАЛЬНОЕ МЕНЮ ДЛЯ МОБИЛЬНЫХ -->
+  <div class="mobile-services-nav">
+    <div class="mobile-services-nav__scroller">
+      <a href="#repair" class="mobile-services-nav__link active">Ремонт и ТО</a>
+      <a href="#upgrade" class="mobile-services-nav__link">Дооснащение</a>
+      <a href="#diagnostics" class="mobile-services-nav__link">Диагностика</a>
+      <a href="#purchase" class="mobile-services-nav__link">Помощь в покупке</a>
+      <a href="#preservation" class="mobile-services-nav__link">Консервация</a>
+      <a href="#jetski" class="mobile-services-nav__link">Гидроциклы</a>
+      <a href="#other" class="mobile-services-nav__link">Иные услуги</a>
+    </div>
+  </div>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="services-page">
+    <div class="container">
+      <div class="services-page__inner">
+        
+        <!-- ЛЕВАЯ НАВИГАЦИЯ -->
+        <aside class="services-sidebar">
+          <div class="services-sidebar__inner">
+            <h3 class="services-sidebar__title">Услуги</h3>
+            <div class="services-sidebar-nav__scroll">
+              <nav class="services-sidebar-nav">
+                <ul class="services-sidebar-nav__list">
+                  <li class="services-sidebar-nav__item">
+                    <a href="#repair" class="services-sidebar-nav__link active">
+                      <i class="fas fa-tools"></i>
+                      <span>Ремонт и ТО</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#upgrade" class="services-sidebar-nav__link">
+                      <i class="fas fa-cogs"></i>
+                      <span>Дооснащение</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#diagnostics" class="services-sidebar-nav__link">
+                      <i class="fas fa-search"></i>
+                      <span>Диагностика</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#purchase" class="services-sidebar-nav__link">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span>Помощь в покупке</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#preservation" class="services-sidebar-nav__link">
+                      <i class="fas fa-snowflake"></i>
+                      <span>Консервация</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#jetski" class="services-sidebar-nav__link">
+                      <i class="fas fa-water"></i>
+                      <span>Гидроциклы</span>
+                    </a>
+                  </li>
+                  <li class="services-sidebar-nav__item">
+                    <a href="#other" class="services-sidebar-nav__link">
+                      <i class="fas fa-wrench"></i>
+                      <span>Иные услуги</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- ПРАВАЯ ЧАСТЬ С КОНТЕНТОМ -->
+        <div class="services-content">
+          
+          <!-- Заголовок страницы -->
+          <div class="services-header">
+            <h1 class="services-title">Наши услуги</h1>
+          </div>
+          
+          <!-- РЕМОНТ И ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ -->
+          <section id="repair" class="service-section">
+            <h2 class="service-section__title">Ремонт и техническое обслуживание</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Плановое_техническое_обслуживание_двигателя_и_трансмиссии_.png" alt="Плановое техническое обслуживание">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Плановое техническое обслуживание двигателя и трансмиссии</h3>
+                  <p class="service-chess-card__description">
+                    Работы выполняются строго по регламенту производителя. Перечень операций и стоимость согласуются заранее и не меняются в процессе. Используются проверенные расходные материалы. По завершении клиент получает исправную технику с понятным перечнем выполненных работ и рекомендациями по дальнейшей эксплуатации.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Поиск_и_устранение_неисправностей_двигателя_.png" alt="Поиск и устранение неисправностей">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Поиск и устранение неисправностей двигателя</h3>
+                  <p class="service-chess-card__description">
+                    Сначала определяется фактическая причина неисправности, после чего принимается решение о ремонте. Замены выполняются только при подтвержденной необходимости. Клиент получает понятное объяснение проблемы, список работ и фиксированную стоимость до начала выполнения.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Восстановление_после_простоев_и_нештатных_ситуаций_.png" alt="Восстановление после простоев">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Восстановление после простоев и нештатных ситуаций</h3>
+                  <p class="service-chess-card__description">
+                    Устраняются последствия длительного хранения, перегрева, проблем с топливом и системой охлаждения. Цель не кратковременный запуск, а восстановление ресурса и стабильной работы техники без скрытых рисков.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Капитальный_ремонт_и_восстановление_ресурса_.png" alt="Капитальный ремонт">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Капитальный ремонт и восстановление ресурса</h3>
+                  <p class="service-chess-card__description">
+                    Проводится полная разборка и оценка состояния узлов. Работы выполняются только при технической и экономической целесообразности. Если капитальный ремонт не оправдан, клиент получает честное заключение и альтернативные варианты решений. Объем работ, сроки и результат понятны заранее.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Тестирование_после_работ_и_приемка_.png" alt="Тестирование и приемка">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Тестирование после работ и приемка</h3>
+                  <p class="service-chess-card__description">
+                    После ремонта техника проверяется в рабочих режимах: запуск, прогрев, нагрузка, герметичность, стабильность параметров. По итогам предоставляется отчет о выполненных работах, состоянии ключевых узлов и рекомендациях по дальнейшему обслуживанию.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Обслуживание_на_месте_базирования_.png" alt="Обслуживание на месте">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Обслуживание на месте базирования</h3>
+                  <p class="service-chess-card__description">
+                    Диагностика и регламентные работы выполняются без транспортировки судна, если это не снижает качество и безопасность. Формат применяется только тогда, когда он технически оправдан.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- ДООСНАЩЕНИЕ, МОДЕРНИЗАЦИЯ И ИНЖЕНЕРНЫЕ СИСТЕМЫ -->
+          <section id="upgrade" class="service-section section-dark">
+            <h2 class="service-section__title">Дооснащение, модернизация и инженерные системы</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Навигация и управление..png" alt="Навигация и управление">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Навигация и управление</h3>
+                  <p class="service-chess-card__description">
+                    Установка и настройка картплоттеров, эхолотов, радаров, автопилотов, датчиков и сетей NMEA. Все системы объединяются в единый контур, корректно взаимодействуют между собой и остаются удобными для дальнейшего обслуживания и диагностики.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Судовая электрика и питание.png" alt="Судовая электрика">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Судовая электрика и питание</h3>
+                  <p class="service-chess-card__description">
+                    Проектирование и монтаж аккумуляторных систем, зарядных устройств, берегового питания, инверторов и распределительных щитов. Нагрузка рассчитывается заранее. Защита линий и логика подключения обеспечивают стабильную работу без непредсказуемых отказов.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Рулевое_управление_и_манёвренность_.png" alt="Рулевое управление">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Рулевое управление и манёвренность</h3>
+                  <p class="service-chess-card__description">
+                    Обслуживание и модернизация рулевых систем, установка гидравлического рулевого управления, установка дополнительных подруливающих устройств, устранение люфтов и неточностей. Управляемость становится предсказуемой, реакции судна стабильными, уровень безопасности повышается.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Климат и комфорт.png" alt="Климат и комфорт">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Климат и комфорт</h3>
+                  <p class="service-chess-card__description">
+                    Установка и обслуживание отопителей, кондиционеров и вентиляции. Оборудование подбирается под реальные условия эксплуатации и объем судна. Системы работают стабильно и не требуют регулярной корректировки.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Водяные и санитарные системы.png" alt="Водяные системы">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Водяные и санитарные системы</h3>
+                  <p class="service-chess-card__description">
+                    Монтаж и обслуживание систем пресной воды, насосов, фильтрации и судовых санузлов. Все соединения выполняются с расчетом на длительную эксплуатацию и удобство обслуживания.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Освещение и подсветка.png" alt="Освещение">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Освещение и подсветка</h3>
+                  <p class="service-chess-card__description">
+                    Палубное, интерьерное, навигационное и подводное освещение. Коммутация и защита выполнены так, чтобы освещение работало стабильно и не создавало избыточной нагрузки на бортовую сеть.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Аудио и мультимедиа.png" alt="Аудио и мультимедиа">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Аудио и мультимедиа</h3>
+                  <p class="service-chess-card__description">
+                    Установка морских аудиосистем, усилителей и зонального управления с корректной интеграцией в электросистему судна. Система работает без помех и не влияет на стабильность питания.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Интеграция_и_модернизация_существующих_систем.png" alt="Интеграция систем">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Интеграция и модернизация существующих систем</h3>
+                  <p class="service-chess-card__description">
+                    Доработка ранее установленного оборудования, исправление ошибок предыдущего монтажа и приведение систем в логичное и обслуживаемое состояние без избыточных переделок.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- ДИАГНОСТИКА ТЕХНИЧЕСКОГО СОСТОЯНИЯ -->
+          <section id="diagnostics" class="service-section">
+            <h2 class="service-section__title">Диагностика технического состояния</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Комплексная_диагностика_судна_и_всех_ключевых_систем.png" alt="Комплексная диагностика">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Комплексная диагностика судна и всех ключевых систем</h3>
+                  <p class="service-chess-card__description">
+                    Проверяется двигатель, электросистема, гидравлика, водяные магистрали, навигация и вспомогательное оборудование. Клиент получает объективную картину состояния судна с пониманием приоритетов и последовательности дальнейших действий.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Диагностика_двигателя_и_системы_охлаждения_.png" alt="Диагностика двигателя">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Диагностика двигателя и системы охлаждения</h3>
+                  <p class="service-chess-card__description">
+                    Оценивается работа двигателя, топливной системы, датчиков и системы охлаждения, включая крыльчатку, помпу, водяной насос и термостаты. Выявляются причины перегрева, нестабильной работы и потери мощности до возникновения серьезных повреждений.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Диагностика_электрики_и_энергосистемы.png" alt="Диагностика электрики">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Диагностика электрики и энергосистемы</h3>
+                  <p class="service-chess-card__description">
+                    Проверяется состояние аккумуляторов, зарядки, распределения нагрузки, защит и соединений. Выявляются утечки тока, просадки напряжения и нестабильные контакты. Устраняется причина проблемы, а не ее последствия.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Диагностика_рулевого_управления_и_гидравлических_систем_.png" alt="Диагностика рулевого">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Диагностика рулевого управления и гидравлических систем</h3>
+                  <p class="service-chess-card__description">
+                    Оценивается состояние рулевых механизмов, магистралей, шлангов, цилиндров и насосов. Контролируются люфты, давление и герметичность. Приоритетом является управляемость и безопасность движения.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Диагностика_навигации_и_систем_связи.png" alt="Диагностика навигации">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Диагностика навигации и систем связи</h3>
+                  <p class="service-chess-card__description">
+                    Проверяется корректность показаний, работа датчиков, стабильность сети и совместимость оборудования. Навигационные системы приводятся в состояние, при котором они работают предсказуемо и не требуют постоянной перенастройки.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- ПОМОЩЬ В ПОКУПКЕ И ПОДБОРЕ -->
+          <section id="purchase" class="service-section section-dark">
+            <h2 class="service-section__title">Помощь в покупке и подборе</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Осмотр_диагностика_судна_перед_покупкой.png" alt="Осмотр перед покупкой">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Осмотр-диагностика судна перед покупкой</h3>
+                  <p class="service-chess-card__description">
+                    Проводится техническая проверка корпуса, двигателя, систем и оборудования. Оценивается реальное состояние, качество предыдущих работ и уровень обслуживания. Позволяет заранее понимать объем предстоящих работ и избегать неожиданных затрат.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Оценка_будущих_затрат_и_плана_работ.png" alt="Оценка затрат">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Оценка будущих затрат и плана работ</h3>
+                  <p class="service-chess-card__description">
+                    Формируется понятный перечень обязательных и рекомендуемых работ с ориентиром по бюджету и приоритетам. Четко разделяется, что требуется выполнить сразу, а что допустимо планировать позже.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Проверка_соответствия_заявленным_характеристикам.png" alt="Проверка характеристик">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Проверка соответствия заявленным характеристикам</h3>
+                  <p class="service-chess-card__description">
+                    Сверяется комплектация, мощность, год выпуска и установленное оборудование с данными из объявления и документов. Исключаются расхождения между заявленным и фактическим состоянием.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Подбор_судна_под_задачи_владельца_.png" alt="Подбор судна">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Подбор судна под задачи владельца</h3>
+                  <p class="service-chess-card__description">
+                    Помощь в оценке класса, конфигурации, двигателя и компоновки исходя из реальных условий эксплуатации. Решения принимаются на основе задач, а не внешнего вида или описаний продавца.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Подбор_оборудования_и_комплектации.png" alt="Подбор оборудования">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Подбор оборудования и комплектации</h3>
+                  <p class="service-chess-card__description">
+                    Рекомендации по навигации, электросистемам, климату, освещению и безопасности под конкретное судно без навязывания брендов и избыточных решений.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- КОНСЕРВАЦИЯ И СЕЗОННОЕ ОБСЛУЖИВАНИЕ -->
+          <section id="preservation" class="service-section">
+            <h2 class="service-section__title">Консервация и сезонное обслуживание</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Консервация перед хранением.png" alt="Консервация">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Консервация перед хранением</h3>
+                  <p class="service-chess-card__description">
+                    Подготовка двигателя, топливной системы, системы охлаждения, водяных магистралей, электрики и установленного оборудования к хранению. Работы выполняются по проверенным схемам с сохранением ресурса техники.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Расконсервация_и_ввод_в_эксплуатацию.png" alt="Расконсервация">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Расконсервация и ввод в эксплуатацию</h3>
+                  <p class="service-chess-card__description">
+                    Проверка всех систем, контроль запуска и устранение типовых последствий хранения. Техника подготавливается к штатной эксплуатации без рисков для двигателя и оборудования.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Сезонное_регламентное_обслуживание.png" alt="Сезонное обслуживание">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Сезонное регламентное обслуживание</h3>
+                  <p class="service-chess-card__description">
+                    Обслуживание по моточасам и состоянию узлов. Проверка помп, крыльчаток, фильтров, ремней, крепежа и соединений для стабильной работы в течение сезона. При необходимости составляется индивидуальный план сезонных работ под конкретное судно и условия эксплуатации.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- РЕМОНТ ГИДРОЦИКЛОВ -->
+          <section id="jetski" class="service-section section-dark">
+            <h2 class="service-section__title">Ремонт гидроциклов</h2>
+            
+            <div class="service-chess-grid">
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Плановое_техническое_обслуживание_и_сезонная_подготовка.png" alt="Плановое ТО гидроциклов">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Плановое техническое обслуживание и сезонная подготовка</h3>
+                  <p class="service-chess-card__description">
+                    Работы выполняются по регламенту производителя с учетом условий эксплуатации. Проверяются системы охлаждения, впуска, топливная часть, электроника и датчики. Цель обеспечить стабильную работу без перегрева, ошибок и внезапных отказов в течение сезона.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Диагностика_и_ремонт_двигателя_гидроцикла.png" alt="Ремонт двигателя гидроцикла">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Диагностика и ремонт двигателя гидроцикла</h3>
+                  <p class="service-chess-card__description">
+                    При потере тяги, нестабильной работе, вибрациях, ошибках или посторонних звуках сначала определяется фактическая причина неисправности. После этого согласуется перечень работ и стоимость. Клиент заранее понимает ожидаемый результат.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Обслуживание_и_ремонт_водометной_части.png" alt="Обслуживание водометной части">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Обслуживание и ремонт водометной части</h3>
+                  <p class="service-chess-card__description">
+                    Проверяется состояние узлов, износ деталей, герметичность соединений, работа подшипников и уплотнений. Устраняются причины кавитации, вибраций и снижения эффективности для восстановления нормальной тяги и ресурса.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Работы_после_нештатных_ситуаций_и_неправильной_эксплуатации.png" alt="Работы после нештатных ситуаций">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Работы после нештатных ситуаций и неправильной эксплуатации</h3>
+                  <p class="service-chess-card__description">
+                    Восстановление после перегрева, попадания воды, длительного простоя, использования некачественного топлива или нарушений условий хранения. Устраняются последствия, которые часто проявляются не сразу.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Подготовка_к_хранению_и_ввод_в_сезон.png" alt="Подготовка к хранению">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Подготовка к хранению и ввод в сезон</h3>
+                  <p class="service-chess-card__description">
+                    Консервация гидроцикла перед межсезоньем и расконсервация перед началом эксплуатации с проверкой всех рабочих параметров. Гидроцикл возвращается в эксплуатацию без дополнительных рисков и повторных обращений.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="service-chess-card reverse">
+                <div class="service-chess-card__image image-border">
+                  <img src="assets/services/Контроль_состояния_и_рекомендации_по_эксплуатации.png" alt="Контроль состояния">
+                </div>
+                <div class="service-chess-card__content">
+                  <h3 class="service-chess-card__title">Контроль состояния и рекомендации по эксплуатации</h3>
+                  <p class="service-chess-card__description">
+                    По итогам работ клиент получает объективную оценка состояния, остаточного ресурса ключевых узлов и рекомендации по дальнейшему обслуживанию.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- ИНЫЕ УСЛУГИ -->
+          <section id="other" class="service-section">
+            <h2 class="service-section__title">Иные услуги</h2>
+            <p class="service-section__subtitle">Технические задачи, выходящие за рамки стандартного обслуживания</p>
+            
+            <div class="service-text-cards">
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Подготовка к транспортировке и работы после перевозки</h3>
+                <p class="service-text-card__description">
+                  Снятие и фиксация оборудования при необходимости, контроль состояния узлов после доставки, сборка и проверка работоспособности. Исключается появление неисправностей, связанных с транспортировкой.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Ввод в эксплуатацию после покупки или перевозки</h3>
+                <p class="service-text-card__description">
+                  Проверка всех систем после смены локации или владельца, контроль запусков и настройка оборудования. Техника приводится в рабочее состояние без накопления скрытых проблем.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Разборка и сборка оборудования</h3>
+                <p class="service-text-card__description">
+                  Аккуратный демонтаж навигации, аудиосистем, освещения и дополнительного оборудования при перевозке, хранении или доработках. Обратная сборка с проверкой корректности подключения и работы.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Устранение последствий некорректного монтажа</h3>
+                <p class="service-text-card__description">
+                  Исправление ошибок предыдущих установок, неправильной коммутации, перегруженных цепей и временных решений. Системы приводятся в логичное и обслуживаемое состояние без полной переделки судна.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Подготовка судна к продаже</h3>
+                <p class="service-text-card__description">
+                  Техническая проверка и устранение критичных замечаний с приведением систем в рабочее состояние. Выполняются только работы, повышающие ликвидность и не вводящие будущего владельца в заблуждение.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Техническое сопровождение при смене условий эксплуатации</h3>
+                <p class="service-text-card__description">
+                  Адаптация судна под новую акваторию, климат или режим использования. Корректировка систем выполняется без избыточных работ и лишних затрат.
+                </p>
+              </div>
+              
+              <div class="service-text-card">
+                <h3 class="service-text-card__title">Консультации и технические заключения</h3>
+                <p class="service-text-card__description">
+                  Ответы на конкретные технические вопросы, оценка целесообразности работ и второе мнение по сложным ситуациям для принятия взвешенных решений.
+                </p>
+              </div>
+            </div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <a href="index.html" class="logo">
+            <img src="assets/logo2.png" alt="Boost Marine" class="logo__img">
+            <div class="logo__text">
+              <span class="logo__top">BOOST</span>
+              <span class="logo__bottom">MARINE</span>
+            </div>
+          </a>
+          <p class="footer__tagline">Ремонт водной техники любой сложности</p>
+        </div>
+        
+        <div class="footer__nav">
+          <h4 class="footer__title">Навигация</h4>
+          <a href="index.html#works" class="footer__link">Работы</a>
+          <a href="index.html#team" class="footer__link">Команда</a>
+          <a href="index.html#contacts" class="footer__link">Контакты</a>
+        </div>
+        
+        <div class="footer__services">
+          <h4 class="footer__title">Контакты</h4>
+          <a href="tel:+123456789" class="footer__link">+1 234 567 89</a>
+          
+          <div class="footer__social">
+            <a href="https://t.me/boostmarine" class="social-icon" target="_blank">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/123456789" class="social-icon" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2025 Boost Marine. Все права защищены.</p>
+        <p class="footer__note">Выезд без ограничений по региону</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+  <script src="services.js"></script>
+</body>
+</html>

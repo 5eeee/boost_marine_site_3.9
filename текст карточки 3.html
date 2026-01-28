@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услуги</title>
+
+<style>
+:root {
+  --bg: #0f1116;
+  --card-bg: #141823;
+  --text: #ffffff;
+  --muted: #cfd3dd;
+  --blue: #6ec1ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== GRID ===== */
+.services {
+  padding: 50px 6vw;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ===== ОБЩИЕ СТИЛИ КАРТОЧЕК ===== */
+.card {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--card-bg);
+  min-height: 300px;
+}
+
+/* Обновляем для поддержки и видео, и изображений */
+.card video,
+.card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10,14,22,0.35);
+  transition: background .6s ease;
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.arrow {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  font-size: 22px;
+  transition: transform .45s ease, background .45s ease;
+}
+
+/* Обновляем ховер для видео и изображений */
+.card:hover video,
+.card:hover img {
+  filter: blur(6px) brightness(0.55);
+  transform: scale(1.06);
+}
+
+.card:hover::after {
+  background: rgba(10,14,22,0.55);
+}
+
+.card:hover .arrow {
+  transform: translateX(10px);
+  background: rgba(110,193,255,0.1);
+}
+
+/* ===== РАСПОЛОЖЕНИЕ В ГРИДЕ ===== */
+.card:nth-child(7) {
+  grid-column: 1 / span 2;
+}
+
+.card:nth-child(8) {
+  grid-column: 3;
+}
+
+.card {
+  height: 100%;
+}
+
+/* Для десктопа делаем квадратные карточки */
+@media (min-width: 1201px) {
+  .card:nth-child(1),
+  .card:nth-child(2),
+  .card:nth-child(3),
+  .card:nth-child(4),
+  .card:nth-child(5),
+  .card:nth-child(6),
+  .card:nth-child(8) {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .card:nth-child(7) {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* ===== ADAPTIVE ===== */
+
+/* Планшетный режим (до 1200px) - 2 колонки */
+@media (max-width: 1200px) {
+  .services {
+    padding: 40px 5vw;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .card:nth-child(n) {
+    grid-column: auto;
+    aspect-ratio: auto;
+  }
+  
+  .card:nth-child(7) {
+    grid-column: span 2;
+  }
+  
+  .card {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .desc {
+    font-size: 14px;
+  }
+  
+  .arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+/* Мобильный режим (до 992px) */
+@media (max-width: 992px) {
+  .services {
+    padding: 32px 4vw;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    aspect-ratio: 1 / 1;
+    min-height: 280px;
+  }
+  
+  .card:nth-child(7) {
+    grid-column: span 1;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .desc {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+}
+
+/* Маленькие мобильные (до 768px) */
+@media (max-width: 768px) {
+  .services {
+    padding: 24px 16px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .card {
+    aspect-ratio: auto;
+    min-height: 260px;
+  }
+  
+  .card:nth-child(7) {
+    grid-column: span 1;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* Очень маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+  .services {
+    padding: 20px 12px;
+  }
+  
+  .grid {
+    gap: 12px;
+  }
+  
+  .card {
+    min-height: 240px;
+    border-radius: 16px;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .desc {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="services">
+  <div class="grid">
+
+    <!-- 1 -->
+    <a class="card" href="#">
+      <video src="./assets/6180cd317a57c3734ac68ee3ad7b1378_720w.mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Ремонт и техническое обслуживание</div>
+          <div class="desc">Полный цикл обслуживания водной техники. Плановые регламентные работы, ремонт любой сложности, восстановление после простоев и нештатных ситуаций. Объём работ и стоимость согласуются заранее.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 2 -->
+    <a class="card" href="#">
+      <video src="./assets/d78b943f9993789143a0c51b61a4b534.mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Дооснащение, модернизация и инженерные системы</div>
+          <div class="desc">Установка, интеграция и обслуживание судовых систем под реальные условия эксплуатации. Навигация, электрика, климат, водяные и санитарные системы, безопасность и управление в единой логике.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 3 -->
+    <a class="card" href="#">
+      <video src="./assets/77f2896714b755eaa073617d3dc49103_720w.mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Диагностика технического состояния</div>
+          <div class="desc">Комплексная техническая диагностика судна и его систем. Поиск скрытых неисправностей, проверка состояния двигателей, электрики, гидравлики и навигации.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 4 -->
+    <a class="card" href="#">
+      <video src="./assets/32097df690f05db3dd46b48ca7501748_720w.mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Помощь в покупке и подборе</div>
+          <div class="desc">Технический осмотр судна перед покупкой и сопровождение сделки. Оценка реального состояния, выявление рисков и планируемых затрат.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 5 -->
+    <a class="card" href="#">
+      <video src="./assets/cd004ab619e69600136fc684a5df6e96_720w.mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Консервация и сезонное обслуживание</div>
+          <div class="desc">Подготовка водной техники к хранению. Консервация двигателей, систем водоснабжения, электрики и оборудования.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 6 -->
+    <a class="card" href="#">
+      <video src="./assets/621124cda8e9347893c8931839158cf6_t4 (1).mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Ремонт гидроциклов</div>
+          <div class="desc">Обслуживание и ремонт гидроциклов. Диагностика, регламентные работы, подготовка к сезону.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 7 ШИРОКИЙ (1x2) С ФОТО -->
+    <a class="card" href="#">
+      <!-- Заменили видео на фото -->
+      <img src="./assets/Frame 18.png" alt="Оборудование, запчасти и комплектующие">
+      <div class="card-content">
+        <div>
+          <div class="title">Оборудование, запчасти и комплектующие</div>
+          <div class="desc">Подбор и поставка оборудования и комплектующих под конкретную конфигурацию судна и условия эксплуатации. Работаем только с проверенными решениями и тем, что действительно имеет смысл устанавливать.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- 8 обычный -->
+    <a class="card" href="#">
+      <video src="./assets/18cb0854519fa578ab2fe6cdab89fdcc (1).mp4" autoplay muted loop playsinline></video>
+      <div class="card-content">
+        <div>
+          <div class="title">Иные услуги</div>
+          <div class="desc">Технические задачи, выходящие за рамки стандартного обслуживания. Исправление последствий некорректного монтажа, работы после транспортировки судна, демонтаж и установка оборудования, адаптация систем под новые условия эксплуатации. Решение нестандартных технических задач с прогнозируемым результатом.</div>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</body>
+</html>
